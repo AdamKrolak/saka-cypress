@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/cypress": "^1.1.6",
+    "cypress-testrail-accumulative-reporter": "^1.1.4"
+  },
+  "experimetalStudio": true,
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}
