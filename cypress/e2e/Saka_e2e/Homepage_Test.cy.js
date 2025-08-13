@@ -25,6 +25,7 @@ beforeEach(() => {
   });
 });
 
+//test
 describe("Smoke test for Homepage.", () => {
   it("Verify that navigation menu is visible. Validate logo, icons and sections ", () => {
     navigationMenu.navMenu().should("be.visible");
