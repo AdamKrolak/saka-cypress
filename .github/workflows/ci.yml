@@ -28,3 +28,10 @@ jobs:
           browser: chrome
           headed: true
           record: false
+
+      - name: Notify Slack
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_COLOR: ${{ job.status }}
