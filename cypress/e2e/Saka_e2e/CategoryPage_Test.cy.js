@@ -12,8 +12,6 @@ var searchPage = new SearchPage();
 
 beforeEach(() => {
   cy.visit("diesel-cars");
-  cy.clearLocalStorage();
-  cy.clearAllSessionStorage();
   homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
