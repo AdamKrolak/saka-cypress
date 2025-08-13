@@ -12,6 +12,7 @@ var comparisonPage = new ComparisonPage();
 
 beforeEach(() => {
   cy.visit("diesel-cars");
+  cy.clearCookies();
   homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
