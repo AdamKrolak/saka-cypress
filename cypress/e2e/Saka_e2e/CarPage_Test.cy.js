@@ -12,7 +12,7 @@ var categoryPage = new CategoryPage();
 beforeEach(() => {
   cy.visit("hybrid-cars");
   cy.wait(1000);
-  homePage.acceptAllCookies();
+  //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
       err.message.includes("fbq is not defined") ||
