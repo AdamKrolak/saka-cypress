@@ -12,7 +12,7 @@ var myAccount = new MyAccount();
 
 beforeEach(() => {
   cy.visit("/auth/login");
-  homePage.acceptAllCookies();
+  //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
       err.message.includes("fbq is not defined") ||

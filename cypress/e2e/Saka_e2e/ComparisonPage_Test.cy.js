@@ -12,8 +12,7 @@ var comparisonPage = new ComparisonPage();
 
 beforeEach(() => {
   cy.visit("diesel-cars");
-  cy.clearCookies();
-  homePage.acceptAllCookies();
+  //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
       err.message.includes("fbq is not defined") ||

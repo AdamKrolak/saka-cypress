@@ -10,7 +10,7 @@ var navigationMenu = new NavigationMenu();
 
 beforeEach(() => {
   cy.visit("/");
-  homePage.acceptAllCookies();
+  //homePage.acceptAllCookies();
   navigationMenu.salesLocation().click();
 
   Cypress.on("uncaught:exception", (err) => {

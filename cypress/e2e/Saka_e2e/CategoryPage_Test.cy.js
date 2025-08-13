@@ -12,7 +12,7 @@ var searchPage = new SearchPage();
 
 beforeEach(() => {
   cy.visit("diesel-cars");
-  homePage.acceptAllCookies();
+  //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
       err.message.includes("fbq is not defined") ||

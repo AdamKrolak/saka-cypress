@@ -21,7 +21,7 @@ beforeEach(() => {
       return false;
     }
   });
-  homePage.acceptAllCookies();
+  //homePage.acceptAllCookies();
   loginPage.emailField().type("adam.krolak+2@vaimo.com", { force: true });
   loginPage.passwordField().type("zaq12WSX", { force: true });
   loginPage.signInEmailButton().click({ force: true });
