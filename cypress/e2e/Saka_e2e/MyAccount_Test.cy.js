@@ -129,7 +129,7 @@ describe("Smoke test for My Saka Page.", () => {
 
   it("The user can log out and is redirected to login page", () => {
     cy.wait(2000);
-    cy.url().should("be.equal", "https://saka.fi/fi/oma-saka");
+    cy.url().should("be.equal", "'https://saka.fi/my-saka'");
     myAccount.myAccoutIcon().click();
     navigationMenu.loginDropdown().should("be.visible");
     navigationMenu.logOutBtn().click();

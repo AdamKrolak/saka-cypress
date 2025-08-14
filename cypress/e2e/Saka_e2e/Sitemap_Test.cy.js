@@ -13,7 +13,7 @@ var searchSuggestions = new SearchSuggestions();
 var searchPage = new SearchPage();
 
 describe("Sitemap Validation", () => {
-  it("Validate that sitemap. Check that sitemap for cars, articles and static is available", () => {
+  it("Validate that sitemap for cars, articles and static is available", () => {
     // Request the sitemap URL
     cy.request("https://saka.fi/sitemap.xml").then((response) => {
       // Ensure the response status is 200
