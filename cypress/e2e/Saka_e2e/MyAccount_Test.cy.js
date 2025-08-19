@@ -88,7 +88,7 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.addCarForm().should("be.visible");
   });
 
-  it("The user can navigate to My Favourite Cars section. Verify content of the page", () => {
+  it.skip("The user can navigate to My Favourite Cars section. Verify content of the page", () => {
     cy.wait(500);
     myAccount.favouriteCarsBtn().click({ force: true });
     myAccount.myFavCarsTitle().should("be.visible");

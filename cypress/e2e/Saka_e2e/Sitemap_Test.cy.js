@@ -88,7 +88,7 @@ describe("Sitemap Validation", () => {
   describe("Meta tags validation", () => {
     it("Verify that meta tags cotain all needed data", () => {
       cy.visit("/");
-      homePage.acceptAllCookies();
+      //homePage.acceptAllCookies();
       Cypress.on("uncaught:exception", (err) => {
         if (
           err.message.includes("fbq is not defined") ||
@@ -159,7 +159,7 @@ describe("Sitemap Validation", () => {
     });
     it.skip("Verify events triggered when user navigates from search page to car page", () => {
       cy.visit("/");
-      homePage.acceptAllCookies();
+      //homePage.acceptAllCookies();
       Cypress.on("uncaught:exception", (err) => {
         if (
           err.message.includes("fbq is not defined") ||

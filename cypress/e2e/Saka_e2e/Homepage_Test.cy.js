@@ -212,12 +212,12 @@ describe("Smoke test for Homepage.", () => {
   it("Verify that user can switch between the dark/light mode", () => {
     homePage
       .html()
-      .should("have.attr", "style", "color-scheme: dark; --sf-vh: 7.2px;");
+      .should("have.attr", "style", "color-scheme: light; --sf-vh: 7.2px;");
     navigationMenu.mySakaIcon().click({ force: true });
     navigationMenu.modeSwitcher().should("be.visible").click({ force: true });
     homePage
       .html()
-      .should("have.attr", "style", "color-scheme: light; --sf-vh: 7.2px;");
+      .should("have.attr", "style", "color-scheme: dark; --sf-vh: 7.2px;");
   });
 
   it("Verify that user can switch a language of the website", () => {
