@@ -3,7 +3,7 @@ export class NavigationMenu {
     return cy.get("#radix-\\:R19mpadfb\\:");
   }
   loginDropdown() {
-    return cy.get("#radix-\\:R19mpadfbH1\\:");
+    return cy.get("#radix-\\:rv\\: > :nth-child(1)");
   }
 
   navMenu() {

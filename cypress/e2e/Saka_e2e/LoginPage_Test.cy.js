@@ -74,6 +74,7 @@ describe("Smoke test for Login Page.", () => {
   });
 
   it("The user can reset the password. Confirmation message is displayed", () => {
+    homePage.acceptAllCookies();
     loginPage.verifyLoginpageUrl();
     loginPage.forgotPasswordLink().click({ force: true });
 
