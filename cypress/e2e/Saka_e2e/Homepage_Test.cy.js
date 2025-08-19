@@ -64,7 +64,7 @@ describe("Smoke test for Homepage.", () => {
   it("Verify that user can navigate from Homepage to My Account", () => {
     homePage.verifyHomepageUrl();
     navigationMenu.mySakaIcon().click({ force: true });
-    navigationMenu.loginDropdown().should("be.visible");
+    homePage.loginDropdown().should("be.visible");
     cy.wait(2000);
     navigationMenu.signIn().click();
     loginPage.verifyLoginpageUrl();
@@ -73,7 +73,7 @@ describe("Smoke test for Homepage.", () => {
   it("Verify that user can navigate from Homepage to Registration page", () => {
     homePage.verifyHomepageUrl();
     navigationMenu.mySakaIcon().click({ force: true });
-    navigationMenu.loginDropdown().should("be.visible");
+    homePage.loginDropdown().should("be.visible");
     cy.wait(2000);
     navigationMenu.signUp().click();
     registrationPage.verifyRegPageUrl();

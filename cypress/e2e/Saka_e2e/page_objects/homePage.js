@@ -18,6 +18,9 @@ export class HomePage {
       .get("#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll")
       .click();
   }
+  loginDropdown() {
+    return cy.get("#radix-\\:R19mpadfbH1\\:");
+  }
   sakaLogo() {
     return cy.get(".ot-sdk-container > .ot-sdk-row");
   }
