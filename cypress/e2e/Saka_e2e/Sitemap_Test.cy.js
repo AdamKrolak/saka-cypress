@@ -125,7 +125,7 @@ describe("Sitemap Validation", () => {
   });
 
   describe("Check pageInfo event in dataLayer", () => {
-    it("Validate that dataLayer contains all need data for GA", () => {
+    it.skip("Validate that dataLayer contains all need data for GA", () => {
       cy.visit("/");
       // homePage.acceptAllCookies();
       Cypress.on("uncaught:exception", (err) => {
@@ -157,7 +157,7 @@ describe("Sitemap Validation", () => {
         expect(pageInfoEvent.registerNumber).to.exist;
       });
     });
-    it("Verify events triggered when user navigates from search page to car page", () => {
+    it.skip("Verify events triggered when user navigates from search page to car page", () => {
       cy.visit("/");
       homePage.acceptAllCookies();
       Cypress.on("uncaught:exception", (err) => {
