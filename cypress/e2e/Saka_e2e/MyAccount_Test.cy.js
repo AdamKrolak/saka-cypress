@@ -51,7 +51,7 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.yourOffers().should("be.visible");
   });
 
-  it("Favourite cars are displayed on the dashboard", () => {
+  it.skip("Favourite cars are displayed on the dashboard", () => {
     cy.wait(500);
     cy.scrollTo(0, 200);
     myAccount.favouriteCar1().should("be.visible");
@@ -88,7 +88,7 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.addCarForm().should("be.visible");
   });
 
-  it.skip("The user can navigate to My Favourite Cars section. Verify content of the page", () => {
+  it("The user can navigate to My Favourite Cars section. Verify content of the page", () => {
     cy.wait(500);
     myAccount.favouriteCarsBtn().click({ force: true });
     myAccount.myFavCarsTitle().should("be.visible");
