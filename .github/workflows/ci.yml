@@ -34,4 +34,9 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CHANNEL: cypress-test-saka-prj
+          SLACK_USERNAME: cypressAction
+          SLACK_MESSAGE: 'Post Content :rocket:'
+          SLACK_TITLE: Cypress test results for Saka
           SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://saka.fi/_next/image?url=%2Fassets%2Flogo%2Fsaka-logo.webp&w=96&q=75
