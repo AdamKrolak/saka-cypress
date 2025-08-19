@@ -88,7 +88,7 @@ describe("Sitemap Validation", () => {
   describe("Meta tags validation", () => {
     it("Verify that meta tags cotain all needed data", () => {
       cy.visit("/");
-      // homePage.acceptAllCookies();
+      homePage.acceptAllCookies();
       Cypress.on("uncaught:exception", (err) => {
         if (
           err.message.includes("fbq is not defined") ||
@@ -138,7 +138,7 @@ describe("Sitemap Validation", () => {
       });
 
       cy.visit("diesel-cars");
-      categoryPage.car1().click({ force: true });
+      categoryPage.car4().click({ force: true });
       cy.wait(2000);
       cy.window().should("have.property", "dataLayer");
       cy.window().then((win) => {
@@ -157,39 +157,38 @@ describe("Sitemap Validation", () => {
         expect(pageInfoEvent.registerNumber).to.exist;
       });
     });
-  });
-
-  it("Verify events triggered when user navigates from search page to car page", () => {
-    cy.visit("/");
-    //  homePage.acceptAllCookies();
-    Cypress.on("uncaught:exception", (err) => {
-      if (
-        err.message.includes("fbq is not defined") ||
-        err.message.includes("Cannot read properties of undefined")
-      ) {
-        return false; // prevents Cypress from failing the test
-      }
-    });
-    navigationMenu.searchIcon().click();
-    searchSuggestions.searchInput().type("volvo{enter}");
-    searchPage.car1().should("be.visible").and("contain", "Volvo");
-    categoryPage.car1().click({ force: true });
-    cy.wait(2000);
-    cy.window().should("have.property", "dataLayer");
-    cy.window().then((win) => {
-      const pageInfoEvent = win.dataLayer.find((e) => e.event === "pageInfo");
-      expect(pageInfoEvent, "pageInfo event exists").to.exist;
-      expect(pageInfoEvent).to.exist;
-      expect(pageInfoEvent.contentId).to.include("Volvo");
-      expect(pageInfoEvent.manufacturer).to.eq("Volvo");
-      expect(pageInfoEvent.bodyType).to.exist;
-      expect(pageInfoEvent.model).to.exist;
-      expect(pageInfoEvent.price).to.exist;
-      expect(pageInfoEvent.fuelType).to.exist;
-      expect(pageInfoEvent.gearType).to.exist;
-      expect(pageInfoEvent.mileage).to.exist;
-      expect(pageInfoEvent.isCarPage).to.exist;
-      expect(pageInfoEvent.registerNumber).to.exist;
+    it("Verify events triggered when user navigates from search page to car page", () => {
+      cy.visit("/");
+      homePage.acceptAllCookies();
+      Cypress.on("uncaught:exception", (err) => {
+        if (
+          err.message.includes("fbq is not defined") ||
+          err.message.includes("Cannot read properties of undefined")
+        ) {
+          return false; // prevents Cypress from failing the test
+        }
+      });
+      navigationMenu.searchIcon().click();
+      searchSuggestions.searchInput().type("volvo{enter}");
+      searchPage.car1().should("be.visible").and("contain", "Volvo");
+      categoryPage.car4().click({ force: true });
+      cy.wait(2000);
+      cy.window().should("have.property", "dataLayer");
+      cy.window().then((win) => {
+        const pageInfoEvent = win.dataLayer.find((e) => e.event === "pageInfo");
+        expect(pageInfoEvent, "pageInfo event exists").to.exist;
+        expect(pageInfoEvent).to.exist;
+        expect(pageInfoEvent.contentId).to.include("Volvo");
+        expect(pageInfoEvent.manufacturer).to.eq("Volvo");
+        expect(pageInfoEvent.bodyType).to.exist;
+        expect(pageInfoEvent.model).to.exist;
+        expect(pageInfoEvent.price).to.exist;
+        expect(pageInfoEvent.fuelType).to.exist;
+        expect(pageInfoEvent.gearType).to.exist;
+        expect(pageInfoEvent.mileage).to.exist;
+        expect(pageInfoEvent.isCarPage).to.exist;
+        expect(pageInfoEvent.registerNumber).to.exist;
+      });
     });
   });
 });

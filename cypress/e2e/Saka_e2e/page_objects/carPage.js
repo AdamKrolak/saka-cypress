@@ -33,6 +33,10 @@ export class CarPage {
     return cy.get('[title="Valmistusvuosi"]');
   }
 
+  yearOfManNew() {
+    return cy.get('[title="Valmistusvuosi"]');
+  }
+
   mileage() {
     return cy.get(".h-fit > :nth-child(1) > .my-3 > :nth-child(2)");
   }
