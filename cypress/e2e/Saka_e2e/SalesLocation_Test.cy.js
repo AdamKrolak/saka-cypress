@@ -9,6 +9,7 @@ var homePage = new HomePage();
 var navigationMenu = new NavigationMenu();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("/");
   //homePage.acceptAllCookies();
   navigationMenu.salesLocation().click();

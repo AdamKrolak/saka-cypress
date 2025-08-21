@@ -12,6 +12,7 @@ var loginPage = new LoginPage();
 var myAccount = new MyAccount();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("/auth/register");
   //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {

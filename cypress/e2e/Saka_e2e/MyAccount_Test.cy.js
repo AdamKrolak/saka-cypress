@@ -11,6 +11,7 @@ var loginPage = new LoginPage();
 var myAccount = new MyAccount();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("/auth/login");
   Cypress.on("uncaught:exception", (err) => {
     if (
@@ -51,7 +52,7 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.yourOffers().should("be.visible");
   });
 
-  it.skip("Favourite cars are displayed on the dashboard", () => {
+  it("Favourite cars are displayed on the dashboard", () => {
     cy.wait(500);
     cy.scrollTo(0, 200);
     myAccount.favouriteCar1().should("be.visible");

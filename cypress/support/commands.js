@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("acceptCookiesBySetting", () => {
+  cy.visit("https://saka.fi", { failOnStatusCode: false });
+
+  const consentCookies = [
+    { name: "CookieConsent", value: "true" },
+    { name: "cookieconsent_status", value: "dismiss" },
+    { name: "OptanonConsent", value: "true" },
+    { name: "euconsent-v2", value: "CPxxxxxx" },
+    { name: "Cookiebot", value: "true" },
+  ];
+
+  consentCookies.forEach((c) => cy.setCookie(c.name, c.value));
+
+  cy.window().then((win) => {
+    try {
+      win.localStorage.setItem("cookieconsent_status", "dismiss");
+    } catch (e) {}
+  });
+});

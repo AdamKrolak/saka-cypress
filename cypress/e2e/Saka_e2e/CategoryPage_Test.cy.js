@@ -11,6 +11,7 @@ var categoryPage = new CategoryPage();
 var searchPage = new SearchPage();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("diesel-cars");
   //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {

@@ -13,6 +13,7 @@ var searchSuggestions = new SearchSuggestions();
 var registrationPage = new RegistrationPage();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("/");
   //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {

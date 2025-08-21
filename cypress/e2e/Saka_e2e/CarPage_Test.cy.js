@@ -10,6 +10,7 @@ var carPage = new CarPage();
 var categoryPage = new CategoryPage();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("hybrid-cars");
   cy.wait(1000);
   //homePage.acceptAllCookies();

@@ -126,16 +126,17 @@ describe("Sitemap Validation", () => {
 
   describe("Check pageInfo event in dataLayer", () => {
     it("Validate that dataLayer contains all need data for GA", () => {
-      cy.visit("/");
+      cy.acceptCookiesBySetting();
+
       //homePage.acceptAllCookies();
-      cy.setCookie(
-        "cookies_consent",
-        JSON.stringify({
-          statistics: true,
-          preferences: true,
-          marketing: true,
-        })
-      );
+      // cy.setCookie(
+      //   "cookies_consent",
+      //   JSON.stringify({
+      //     statistics: true,
+      //     preferences: true,
+      //     marketing: true,
+      //   })
+      // );
       Cypress.on("uncaught:exception", (err) => {
         if (
           err.message.includes("fbq is not defined") ||
@@ -166,6 +167,7 @@ describe("Sitemap Validation", () => {
       });
     });
     it("Verify events triggered when user navigates from search page to car page", () => {
+      cy.acceptCookiesBySetting();
       cy.visit("/");
       //homePage.acceptAllCookies();
 
@@ -178,14 +180,6 @@ describe("Sitemap Validation", () => {
         }
       });
 
-      cy.setCookie(
-        "cookies_consent",
-        JSON.stringify({
-          statistics: true,
-          preferences: true,
-          marketing: true,
-        })
-      );
       navigationMenu.searchIcon().click();
       searchSuggestions.searchInput().type("volvo{enter}");
       searchPage.car1().should("be.visible").and("contain", "Volvo");

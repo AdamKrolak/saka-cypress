@@ -11,6 +11,7 @@ var loginPage = new LoginPage();
 var myAccount = new MyAccount();
 
 beforeEach(() => {
+  cy.acceptCookiesBySetting();
   cy.visit("/auth/login");
   //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
@@ -77,7 +78,7 @@ describe("Smoke test for Login Page.", () => {
     loginPage.verifyLoginpageUrl();
     loginPage.forgotPasswordLink().click({ force: true });
 
-    loginPage.emailFieldResetPass().type("adam.krolak+2@vaimo.com", {
+    loginPage.emailFieldResetPass2().type("adam.krolak+2@vaimo.com", {
       force: true,
     });
 
