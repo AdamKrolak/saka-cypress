@@ -75,7 +75,7 @@ describe("Smoke test for Car page.", () => {
     //carPage.financingCalc().should("be.visible");
   });
 
-  it.only("Verify that basic info of the car are available", () => {
+  it("Verify that basic info of the car are available", () => {
     categoryPage.car1().click({ force: true });
     carPage.mileage().should("be.visible");
     carPage.yearOfManNew().should("be.visible");

@@ -147,7 +147,7 @@ describe("Sitemap Validation", () => {
       });
 
       cy.visit("diesel-cars");
-      categoryPage.car4().click({ force: true });
+      categoryPage.car1().click({ force: true });
       cy.wait(2000);
       cy.window().should("have.property", "dataLayer");
       cy.window().then((win) => {
@@ -183,7 +183,7 @@ describe("Sitemap Validation", () => {
       navigationMenu.searchIcon().click();
       searchSuggestions.searchInput().type("volvo{enter}");
       searchPage.car1().should("be.visible").and("contain", "Volvo");
-      categoryPage.car4().click({ force: true });
+      categoryPage.car1().click({ force: true });
       cy.wait(2000);
       cy.window().should("have.property", "dataLayer");
       cy.window().then((win) => {

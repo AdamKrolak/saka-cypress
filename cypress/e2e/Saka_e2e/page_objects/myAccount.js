@@ -59,6 +59,10 @@ export class MyAccount {
     return cy.get(".md\\:flex-row > :nth-child(1) > .gap-4 > :nth-child(2)");
   }
 
+  favouriteCarA() {
+    return cy.get('a[class="border-primary-400 hover:text-primary-500"]');
+  }
+
   article1() {
     return cy.get(".md\\:pb-2 > :nth-child(1) > .relative > .absolute");
   }
@@ -131,19 +135,19 @@ export class MyAccount {
   }
 
   firstName() {
-    return cy.get("#\\:r1o\\:-form-item");
+    return cy.get(".grid > :nth-child(1) > .space-y-2");
   }
 
   lastName() {
-    return cy.get("#\\:r1p\\:-form-item");
+    return cy.get(":nth-child(2) > .space-y-2");
   }
 
   phoneNumber() {
-    return cy.get("#\\:r1q\\:-form-item");
+    return cy.get(":nth-child(3) > .space-y-2");
   }
 
   email() {
-    return cy.get(":nth-child(4) > .h-12");
+    return cy.get(".grid > :nth-child(4)");
   }
 
   editProfileBtn() {

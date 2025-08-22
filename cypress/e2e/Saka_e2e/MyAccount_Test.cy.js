@@ -55,6 +55,9 @@ describe("Smoke test for My Saka Page.", () => {
   it("Favourite cars are displayed on the dashboard", () => {
     cy.wait(500);
     cy.scrollTo(0, 200);
+    myAccount.favouriteCarA().eq(0).should("be.visible");
+    myAccount.favouriteCarA().eq(1).should("be.visible");
+    myAccount.favouriteCarA().eq(2).should("be.visible");
     myAccount.favouriteCar1().should("be.visible");
     myAccount.favouriteCar2().should("be.visible");
   });
@@ -113,10 +116,13 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.myProfileBtn().click({ force: true });
     cy.wait(500);
     myAccount.myProfileTitle().should("be.visible");
-    myAccount.firstName().should("be.visible");
-    myAccount.lastName().should("be.visible");
-    myAccount.phoneNumber().should("be.visible");
-    myAccount.email().should("be.visible");
+    myAccount.firstName().should("be.visible").and("contain", "Adam");
+    myAccount.lastName().should("be.visible").and("contain", "Krolak");
+    myAccount.phoneNumber().should("be.visible").and("contain", "0837996876");
+    myAccount
+      .email()
+      .should("be.visible")
+      .and("contain", "adam.krolak+2@vaimo.com");
     myAccount.editProfileBtn().should("be.visible");
   });
 
