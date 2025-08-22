@@ -74,6 +74,14 @@ export class CarPage {
     );
   }
 
+  equipement() {
+    return cy.get("#accordion-header-equipment");
+  }
+
+  equipementCont() {
+    return cy.get("#accordion-content-equipment");
+  }
+
   equAccTitle() {
     return cy.contains("Equipment");
   }
@@ -95,15 +103,11 @@ export class CarPage {
   }
 
   basicInfoAccCont() {
-    return cy.get(
-      ".md\\:block > :nth-child(1) > :nth-child(2) > .mb-3 > :nth-child(1) > #accordion-header-basicinformation > .text-left"
-    );
+    return cy.get("#accordion-header-basicinformation");
   }
 
   techInfoAcc() {
-    return cy.get(
-      ".md\\:block > :nth-child(1) > :nth-child(3) > .mb-3 > :nth-child(1) > #accordion-header-technicalinformation > .text-left"
-    );
+    return cy.get("#accordion-header-technicalinformation");
   }
 
   techInfoTitle() {
@@ -111,15 +115,11 @@ export class CarPage {
   }
 
   techInfoAccCont() {
-    return cy.get(
-      ".md\\:block > :nth-child(1) > :nth-child(3) > .mb-3 > #accordion-content-technicalinformation > .grid"
-    );
+    return cy.get("#accordion-content-technicalinformation > .grid");
   }
 
   condRepotAcc() {
-    return cy.get(
-      ".md\\:block > :nth-child(1) > :nth-child(4) > .mb-3 > :nth-child(1) > #accordion-header-conditionreport > .text-left"
-    );
+    return cy.get("#accordion-header-conditionreport");
   }
 
   condRepotTitle() {
@@ -127,9 +127,7 @@ export class CarPage {
   }
 
   condRepotAccForm() {
-    return cy.get(
-      ".md\\:block > :nth-child(1) > :nth-child(4) > .mb-3 > #accordion-content-conditionreport > .rounded-\\[40px\\]"
-    );
+    return cy.get("#accordion-content-conditionreport > .rounded-\\[40px\\]");
   }
 
   relatedCarTitle() {

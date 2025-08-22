@@ -78,4 +78,10 @@ export class CategoryPage {
       ":nth-child(4) > .mb-3.flex-col > .border-primary-400 > .relative > .left-0"
     );
   }
+
+  car6() {
+    return cy.get(
+      ":nth-child(7) > .mb-3.flex-col > .border-primary-400 > .relative > .left-0"
+    );
+  }
 }
