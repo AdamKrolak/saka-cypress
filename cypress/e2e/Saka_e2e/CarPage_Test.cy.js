@@ -106,7 +106,7 @@ describe("Smoke test for Car page.", () => {
     carPage.equipementCont().should("be.visible");
   });
 
-  it.only("Verify use can expand basic information accordion and the content is visible ", () => {
+  it("Verify use can expand basic information accordion and the content is visible ", () => {
     categoryPage.car6().scrollIntoView().click({ force: true });
     // cy.get('div[data-id="car-details-desktop"]')
     //   .find("button")
