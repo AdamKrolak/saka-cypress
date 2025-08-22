@@ -93,9 +93,7 @@ export class CarPage {
   }
 
   basicInfoAcc() {
-    return cy.get(
-      ".md\\:block > :nth-child(1) > :nth-child(2) > .mb-3 > :nth-child(1) > #accordion-header-basicinformation"
-    );
+    return cy.get("#accordion-header-basicinformation");
   }
 
   basicInfoTitle() {
