@@ -140,6 +140,7 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.myAccoutIcon().click();
     navigationMenu.loginDropdown().should("be.visible");
     navigationMenu.logOutBtn().click();
+    cy.wait(1000);
     cy.url().should("be.equal", "https://saka.fi/fi/auth/kirjaudu");
   });
 });
