@@ -35,6 +35,10 @@ export class SearchPage {
     return cy.get(":nth-child(1) > .grid > :nth-child(1)");
   }
 
+  car2() {
+    return cy.get(":nth-child(1) > .grid > :nth-child(2)");
+  }
+
   car1Image() {
     return cy.get(
       ":nth-child(1) > .mb-3.flex-col > .border-primary-400 > .relative > .left-0"

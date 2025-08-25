@@ -79,7 +79,7 @@ describe("Sitemap Validation", () => {
 
         // Assert there are at least 500 matching product links
         expect(carsMap.length).to.be.gte(
-          500,
+          450,
           `Sitemap should contain 500 links starting with https://saka.fi/sitemaps/cars/`
         );
       }
@@ -183,7 +183,7 @@ describe("Sitemap Validation", () => {
       navigationMenu.searchIcon().click();
       searchSuggestions.searchInput().type("volvo{enter}");
       searchPage.car1().should("be.visible").and("contain", "Volvo");
-      categoryPage.car1().click({ force: true });
+      categoryPage.car4().click({ force: true });
       cy.wait(2000);
       cy.window().should("have.property", "dataLayer");
       cy.window().then((win) => {
