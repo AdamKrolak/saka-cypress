@@ -32,7 +32,8 @@ describe("Smoke test for Login Page.", () => {
     loginPage.passwordField().type("zaq12WSX", { force: true });
     loginPage.signInEmailButton().click({ force: true });
     cy.wait(1000);
-    myAccount.verifyMySakapageUrl();
+    //myAccount.verifyMySakapageUrl();
+    cy.url().should("be.equal", "https://saka.fi/my-saka");
   });
 
   it("The user cannot login with invalid email address. An error message is displayed", () => {
