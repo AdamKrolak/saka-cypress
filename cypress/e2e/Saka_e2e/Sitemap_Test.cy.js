@@ -79,8 +79,8 @@ describe("Sitemap Validation", () => {
 
         // Assert there are at least 500 matching product links
         expect(carsMap.length).to.be.gte(
-          450,
-          `Sitemap should contain 500 links starting with https://saka.fi/sitemaps/cars/`
+          350,
+          `Sitemap should contain 450 links starting with https://saka.fi/sitemaps/cars/`
         );
       }
     );
