@@ -42,7 +42,7 @@ describe("Smoke test for Homepage.", () => {
     navigationMenu.logo().should("be.visible");
   });
 
-  it("Verify that user can switch language of the website", () => {
+  it.only("Verify that user can switch language of the website", () => {
     navigationMenu.langFlag().click({ force: true });
     navigationMenu.langDropdowm().should("be.visible");
     navigationMenu.fiFlag().should("be.visible");

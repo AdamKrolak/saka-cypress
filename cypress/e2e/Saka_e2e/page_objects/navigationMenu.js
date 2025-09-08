@@ -1,6 +1,6 @@
 export class NavigationMenu {
   mySakaIcon() {
-    return cy.get("#radix-\\:R19mpadfb\\:");
+    return cy.get(".pr-4 > .border-primary-400 > img");
   }
   loginDropdown() {
     return cy.get("#radix-\\:rv\\: > :nth-child(1)");
@@ -27,7 +27,7 @@ export class NavigationMenu {
     return cy.get("#radix-\\:R6nadfb\\:-trigger-radix-\\:R35mnadfb\\:");
   }
   carsForSale2() {
-    return cy.get("#radix-\\:R6padfb\\:-trigger-radix-\\:R35mpadfb\\:");
+    return cy.get(".group\\/list").contains("Cars for Sale");
   }
   dieselCars() {
     return cy.contains("a", "Diesel Cars");
@@ -38,10 +38,10 @@ export class NavigationMenu {
   }
 
   langFlag() {
-    return cy.get("#radix-\\:R5pmpadfb\\: > .rounded-full");
+    return cy.get("#radix-_R_2srcl6ivb_ > .rounded-full");
   }
   sellYourCar() {
-    return cy.get("#radix-\\:R6padfb\\:-trigger-radix-\\:R55mpadfb\\:");
+    return cy.get(".group\\/list").contains("Sell your car");
   }
 
   modeSwitcher() {
@@ -49,7 +49,7 @@ export class NavigationMenu {
   }
 
   productsNServices() {
-    return cy.get("#radix-\\:R6padfb\\:-trigger-radix-\\:R75mpadfb\\:");
+    return cy.get(".group\\/list").contains("Products & Services");
   }
 
   articles() {
@@ -61,7 +61,7 @@ export class NavigationMenu {
   }
 
   comapny() {
-    return cy.get("#radix-\\:R6padfb\\:-trigger-radix-\\:Rd5mpadfb\\:");
+    return cy.get(".group\\/list").contains("Company");
   }
   logo() {
     return cy.get(".pr-4 > .border-primary-400 > img");
@@ -74,15 +74,15 @@ export class NavigationMenu {
   }
 
   langDropdowm() {
-    return cy.get("#radix-\\:R5pmpadfbH1\\:");
+    return cy.get("#radix-_R_2srcl6ivbH1_");
   }
 
   fiFlag() {
-    return cy.get("#radix-\\:R5pmpadfbH1\\: > :nth-child(1) > img");
+    return cy.get("#radix-_R_2srcl6ivbH1_ > :nth-child(1) > img");
   }
 
   svFlag() {
-    return cy.get("#radix-\\:R5pmpadfbH1\\: > :nth-child(2) > img");
+    return cy.get("#radix-_R_2srcl6ivbH1_ > :nth-child(2) > img");
   }
 
   enFlag() {
