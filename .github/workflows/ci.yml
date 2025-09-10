@@ -29,8 +29,7 @@ jobs:
           headed: true
           record: false
 
-      - uses: actions/upload-artifact@v3
-        if: failure()
+      - uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
           path: cypress/screenshots
