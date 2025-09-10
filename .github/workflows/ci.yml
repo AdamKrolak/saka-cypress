@@ -26,7 +26,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          headed: false
+          headed: true
           record: false
 
       - name: Notify Slack

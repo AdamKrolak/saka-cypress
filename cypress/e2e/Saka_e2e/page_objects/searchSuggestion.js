@@ -8,7 +8,7 @@ export class SearchSuggestions {
   }
 
   searchInput() {
-    return cy.get("#\\:R2pmpadfb\\:");
+    return cy.get("#_R_mecl6ivb_");
   }
 
   searchSugCarTitle1() {
