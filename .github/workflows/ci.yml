@@ -29,6 +29,12 @@ jobs:
           headed: true
           record: false
 
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
       - name: Notify Slack
         if: failure()
         uses: rtCamp/action-slack-notify@v2
