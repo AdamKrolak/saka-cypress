@@ -1,18 +1,16 @@
 export class NavigationMenu {
   mySakaIcon() {
-    return cy.get(".pr-4 > .border-primary-400 > img");
+    return cy.get(".flex-shrink").find("button").contains("My Saka");
   }
   loginDropdown() {
-    return cy.get("#radix-\\:rv\\: > :nth-child(1)");
+    return cy.get("div[data-radix-popper-content-wrapper]");
   }
 
   navMenu() {
     return cy.get(".\\!w-full");
   }
   signIn() {
-    return cy.get(
-      "#radix-\\:R19mpadfbH1\\: > :nth-child(1) > :nth-child(1) > .border-primary-400"
-    );
+    return cy.get("div[data-radix-popper-content-wrapper]").contains("Sign in");
   }
 
   logOutBtn() {
@@ -34,11 +32,11 @@ export class NavigationMenu {
   }
 
   carsForSaleDrop() {
-    return cy.get("#radix-\\:R6padfb\\:-content-radix-\\:R35mpadfb\\: > div");
+    return cy.get("#radix-_R_2cl6ivb_-content-radix-_R_pecl6ivb_");
   }
 
   langFlag() {
-    return cy.get("#radix-_R_2srcl6ivb_ > .rounded-full");
+    return cy.get(".flex-shrink").find("img");
   }
   sellYourCar() {
     return cy.get(".group\\/list").contains("Sell your car");
@@ -68,21 +66,23 @@ export class NavigationMenu {
   }
 
   signUp() {
-    return cy.get(
-      "#radix-\\:R19mpadfbH1\\: > :nth-child(1) > :nth-child(2) > .border-primary-400"
-    );
+    return cy.get("div[data-radix-popper-content-wrapper]").contains("Sign up");
   }
 
   langDropdowm() {
-    return cy.get("#radix-_R_2srcl6ivbH1_");
+    return cy.get("div[data-radix-popper-content-wrapper]");
   }
 
   fiFlag() {
-    return cy.get("#radix-_R_2srcl6ivbH1_ > :nth-child(1) > img");
+    return cy
+      .get("div[data-radix-popper-content-wrapper]")
+      .find('img[alt="Switch to FI"]');
   }
 
   svFlag() {
-    return cy.get("#radix-_R_2srcl6ivbH1_ > :nth-child(2) > img");
+    return cy
+      .get("div[data-radix-popper-content-wrapper]")
+      .find('img[alt="Switch to SV"]');
   }
 
   enFlag() {

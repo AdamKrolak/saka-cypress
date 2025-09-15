@@ -19,7 +19,7 @@ export class HomePage {
       .click();
   }
   loginDropdown() {
-    return cy.get("#radix-\\:R19mpadfbH1\\:");
+    return cy.get("div[data-radix-popper-content-wrapper]");
   }
   sakaLogo() {
     return cy.get(".ot-sdk-container > .ot-sdk-row");
@@ -91,7 +91,7 @@ export class HomePage {
 
   articleSection() {
     return cy.get(
-      ':nth-child(5) > .grid-cols > [role="region"] > .flex.justify-between'
+      ':nth-child(6) > .grid-cols > [role="region"] > .flex.justify-between'
     );
   }
 
@@ -131,7 +131,7 @@ export class HomePage {
   }
 
   newsletter() {
-    return cy.get("#\\:R1fadfb\\:-form-item > .flex");
+    return cy.get(".space-y-2").find("input");
   }
 
   newsletterBtn() {

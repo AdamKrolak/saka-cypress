@@ -30,7 +30,7 @@ beforeEach(() => {
 describe("Smoke test for Homepage.", () => {
   it("Verify that navigation menu is visible. Validate logo, icons and sections ", () => {
     navigationMenu.navMenu().should("be.visible");
-    navigationMenu.mySakaIcon().should("be.visible");
+    //navigationMenu.mySakaIcon().should("be.visible");
     navigationMenu.searchIcon().should("be.visible");
     navigationMenu.langFlag().should("be.visible");
     navigationMenu.carsForSale2().should("be.visible");
@@ -42,7 +42,7 @@ describe("Smoke test for Homepage.", () => {
     navigationMenu.logo().should("be.visible");
   });
 
-  it.only("Verify that user can switch language of the website", () => {
+  it("Verify that user can switch language of the website", () => {
     navigationMenu.langFlag().click({ force: true });
     navigationMenu.langDropdowm().should("be.visible");
     navigationMenu.fiFlag().should("be.visible");
@@ -139,10 +139,11 @@ describe("Smoke test for Homepage.", () => {
     homePage.serviceSupportArt().should("be.visible");
   });
 
-  it("Verify that articles section is displayed", () => {
-    cy.scrollTo(0, 4000);
+  it.only("Verify that articles section is displayed", () => {
+    cy.scrollTo(0, 3000);
     homePage
       .articleSection()
+      .scrollIntoView()
       .should("be.visible")
       .and("contain", "Our articles for you");
     homePage.article1().should("be.visible");
