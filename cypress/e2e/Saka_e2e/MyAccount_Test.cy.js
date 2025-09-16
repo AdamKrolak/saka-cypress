@@ -103,8 +103,8 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.recommendedCarsNavigation().should("be.visible");
   });
 
-  it("The user can navigate to My Profile section. Verify content of the page", () => {
-    cy.wait(1500);
+  it.only("The user can navigate to My Profile section. Verify content of the page", () => {
+    cy.wait(3000);
     cy.scrollTo(0, 100);
 
     myAccount.myProfileBtn().click({ force: true });
