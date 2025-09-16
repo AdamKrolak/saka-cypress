@@ -52,7 +52,7 @@ describe("Smoke test for My Saka Page.", () => {
     myAccount.yourOffers().should("be.visible");
   });
 
-  it.skip("Favourite cars are displayed on the dashboard", () => {
+  it("Favourite cars are displayed on the dashboard", () => {
     cy.wait(500);
     cy.scrollTo(0, 200);
     myAccount.favouriteCarA().eq(0).should("be.visible");
@@ -136,7 +136,7 @@ describe("Smoke test for My Saka Page.", () => {
 
   it("The user can log out and is redirected to login page", () => {
     cy.wait(1000);
-    cy.url().should("be.equal", "https://saka.fi/my-saka");
+    cy.url().should("be.equal", "https://saka.fi/fi/oma-saka");
     myAccount.myAccoutIcon().click();
     navigationMenu.loginDropdown().should("be.visible");
     navigationMenu.logOutBtn().click();

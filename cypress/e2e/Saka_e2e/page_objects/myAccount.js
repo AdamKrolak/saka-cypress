@@ -165,6 +165,6 @@ export class MyAccount {
   }
 
   myAccoutIcon() {
-    return cy.get("#radix-\\:ru\\:");
+    return cy.get(".flex-shrink").contains("Oma Saka");
   }
 }

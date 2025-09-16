@@ -20,11 +20,11 @@ export class RegistrationPage {
   }
 
   createPasswordField() {
-    return cy.get("#\\:Ra7rrtadfb\\:-form-item");
+    return cy.get(".space-y-6 > :nth-child(2)").find("input");
   }
 
   confirmPasswordField() {
-    return cy.get("#\\:Re7rrtadfb\\:-form-item");
+    return cy.get(".space-y-6 > :nth-child(3)").find("input");
   }
 
   sendVerificationButton() {

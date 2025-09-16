@@ -103,11 +103,12 @@ describe("Smoke test for the search", () => {
 
   it("Verify that user can navigate to a car page from serch reasul page", () => {
     navigationMenu.searchIcon().click();
-    searchSuggestions.searchInput().type("volvo{enter}");
+    searchSuggestions.searchInput().type("volvo{enter}", { force: true });
     cy.url().should("be.equal", "https://saka.fi/en/search?q=volvo");
     cy.wait(1000);
     categoryPage.car1().click({ force: true });
-    cy.url().should("include", "https://saka.fi/en/cars/Volvo");
+    cy.wait(1000);
+    cy.url().should("include", "https://saka.fi/en/cars/volvo");
   });
 
   it("Verify car cards on search result page", () => {

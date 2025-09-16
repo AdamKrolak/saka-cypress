@@ -30,7 +30,7 @@ beforeEach(() => {
 describe("Smoke test for Homepage.", () => {
   it("Verify that navigation menu is visible. Validate logo, icons and sections ", () => {
     navigationMenu.navMenu().should("be.visible");
-    //navigationMenu.mySakaIcon().should("be.visible");
+    navigationMenu.mySakaIcon().should("exist");
     navigationMenu.searchIcon().should("be.visible");
     navigationMenu.langFlag().should("be.visible");
     navigationMenu.carsForSale2().should("be.visible");
@@ -139,7 +139,7 @@ describe("Smoke test for Homepage.", () => {
     homePage.serviceSupportArt().should("be.visible");
   });
 
-  it.only("Verify that articles section is displayed", () => {
+  it("Verify that articles section is displayed", () => {
     cy.scrollTo(0, 3000);
     homePage
       .articleSection()

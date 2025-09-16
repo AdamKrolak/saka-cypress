@@ -12,11 +12,11 @@ export class LoginPage {
   }
 
   emailField() {
-    return cy.get("#\\:R67rrtadfb\\:-form-item");
+    return cy.get(".max-w-fit > .space-y-6 > :nth-child(1)").find("input");
   }
 
   passwordField() {
-    return cy.get("#\\:Ra7rrtadfb\\:-form-item");
+    return cy.get(".space-y-6 > :nth-child(2)").find("input");
   }
 
   signInEmailButton() {

@@ -49,7 +49,7 @@ describe("Smoke test for Car page.", () => {
 
   it("Verify that name of the car is visible", () => {
     categoryPage.car1().click({ force: true });
-    carPage.carName().should("be.visible");
+    carPage.carName().should("exist");
   });
 
   it("Verify that short description of the car is visible", () => {

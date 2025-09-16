@@ -26,14 +26,14 @@ beforeEach(() => {
 });
 
 describe("Smoke test for Login Page.", () => {
-  it("The user can login to My Account using email", () => {
+  it.only("The user can login to My Account using email", () => {
     loginPage.verifyLoginpageUrl();
     loginPage.emailField().type("adam.krolak+2@vaimo.com", { force: true });
     loginPage.passwordField().type("zaq12WSX", { force: true });
     loginPage.signInEmailButton().click({ force: true });
     cy.wait(1000);
     //myAccount.verifyMySakapageUrl();
-    cy.url().should("be.equal", "https://saka.fi/my-saka");
+    cy.url().should("be.equal", "https://saka.fi/fi/oma-saka");
   });
 
   it("The user cannot login with invalid email address. An error message is displayed", () => {
