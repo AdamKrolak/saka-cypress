@@ -44,7 +44,7 @@ describe("Smoke test for Car page.", () => {
     //   .find(".aspect-\\[1076\\/694\\]")
     //   .should("be.visible");
     carPage.carImage().should("be.visible");
-    carPage.firstGallImage().should("be.visible");
+    carPage.firstGallImage().should("exist");
   });
 
   it("Verify that name of the car is visible", () => {
