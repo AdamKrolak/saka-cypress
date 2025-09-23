@@ -177,6 +177,6 @@ export class HomePage {
   }
 
   html() {
-    return cy.get(".__variable_897ac5");
+    return cy.get(".__variable_d04eb7");
   }
 }

@@ -38,10 +38,10 @@ describe("Sitemap Validation", () => {
       );
 
       const articleMap = links.filter((link) =>
-        link.startsWith("https://saka.fi/sitemaps/articles/sitemap/0.xml")
+        link.startsWith("https://saka.fi/sitemaps/articles/sitemap/fi-0.xml")
       );
 
-      // Assert there is 1 matching link for articles
+      // Assert there is 3 matching link for articles for each language
       expect(articleMap.length).to.be.gte(
         1,
         `Sitemap should contain 1 link starting with https://saka.fi/sitemaps/articles/sitemap/0.xml`
@@ -60,7 +60,7 @@ describe("Sitemap Validation", () => {
   });
   it("Validate that sitemap cotnains links for all cars", () => {
     // Request the sitemap URL
-    cy.request("https://saka.fi/sitemaps/cars/sitemap/3.xml").then(
+    cy.request("https://saka.fi/sitemaps/cars/sitemap/fi-3.xml").then(
       (response) => {
         // Ensure the response status is 200
         expect(response.status).to.eq(200);
