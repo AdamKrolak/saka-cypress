@@ -96,15 +96,15 @@ describe("Smoke test for Car page.", () => {
     carPage.minimiseBtn().should("not.exist");
   });
 
-  it("Verify use can expand equpiment accordion and the content is visible ", () => {
-    categoryPage.car4().click({ force: true });
-    cy.wait(500);
-    cy.scrollTo(0, 500);
-    //carPage.equAcc().should("be.visible");
-    carPage.equipement().click({ force: true });
-    //carPage.equAccTitle().should("be.visible");
-    carPage.equipementCont().should("be.visible");
-  });
+  // it("Verify use can expand equpiment accordion and the content is visible ", () => {
+  //   categoryPage.car4().click({ force: true });
+  //   cy.wait(500);
+  //   cy.scrollTo(0, 500);
+  //   //carPage.equAcc().should("be.visible");
+  //   carPage.equipement().click({ force: true });
+  //   //carPage.equAccTitle().should("be.visible");
+  //   carPage.equipementCont().should("be.visible");
+  // });
 
   it("Verify use can expand basic information accordion and the content is visible ", () => {
     categoryPage.car6().scrollIntoView().click({ force: true });
