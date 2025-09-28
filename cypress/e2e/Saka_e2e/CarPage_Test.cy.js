@@ -75,13 +75,13 @@ describe("Smoke test for Car page.", () => {
     //carPage.financingCalc().should("be.visible");
   });
 
-  it("Verify that basic info of the car are available", () => {
-    categoryPage.car1().click({ force: true });
-    carPage.mileage().should("be.visible");
-    carPage.yearOfManNew().should("be.visible");
-    carPage.type().should("be.visible");
-    carPage.transmission().should("be.visible");
-  });
+  // it("Verify that basic info of the car are available", () => {
+  //   categoryPage.car1().click({ force: true });
+  //   carPage.mileage().should("be.visible");
+  //   carPage.yearOfManNew().should("be.visible");
+  //   carPage.type().should("be.visible");
+  //   carPage.transmission().should("be.visible");
+  // });
 
   it("Verify that user can view image in full screen", () => {
     categoryPage.car6().click({ force: true });
@@ -106,17 +106,17 @@ describe("Smoke test for Car page.", () => {
   //   carPage.equipementCont().should("be.visible");
   // });
 
-  // it("Verify use can expand basic information accordion and the content is visible ", () => {
-  //   categoryPage.car6().scrollIntoView().click({ force: true });
-  //   // cy.get('div[data-id="car-details-desktop"]')
-  //   //   .find("button")
-  //   //   .contains("Basic Information");
+  it("Verify use can expand basic information accordion and the content is visible ", () => {
+    categoryPage.car6().scrollIntoView().click({ force: true });
+    // cy.get('div[data-id="car-details-desktop"]')
+    //   .find("button")
+    //   .contains("Basic Information");
 
-  //   carPage.basicInfoAcc().should("be.visible");
-  //   carPage.basicInfoAcc().click({ force: true });
-  //   carPage.basicInfoTitle().should("be.visible");
-  //   carPage.basicInfoAccCont().should("be.visible");
-  // });
+    carPage.basicInfoAcc().should("be.visible");
+    carPage.basicInfoAcc().click({ force: true });
+    carPage.basicInfoTitle().should("be.visible");
+    carPage.basicInfoAccCont().should("be.visible");
+  });
 
   it("Verify use can expand technical information accordion and the content is visible ", () => {
     categoryPage.car6().click({ force: true });

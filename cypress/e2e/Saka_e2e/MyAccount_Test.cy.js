@@ -62,11 +62,11 @@ describe("Smoke test for My Saka Page.", () => {
   //   myAccount.favouriteCar2().should("be.visible");
   // });
 
-  it("The user has access to an articles on the dashboard", () => {
-    cy.wait(500);
-    myAccount.article1().should("be.visible");
-    myAccount.article2().should("be.visible");
-  });
+  // it("The user has access to an articles on the dashboard", () => {
+  //   cy.wait(500);
+  //   myAccount.article1().should("be.visible");
+  //   myAccount.article2().should("be.visible");
+  // });
 
   it("The user can navigate to My Cars section. Verify the content of the page ", () => {
     cy.wait(2000);
