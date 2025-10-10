@@ -46,7 +46,7 @@ describe("Smoke test for Category page.", () => {
       .heroBannerDesc()
       .should(
         "contain",
-        "A diesel car is a sure choice for those who drive a lot. It is an incomparable touring car and is suitable for every situation. Discover our selection!"
+        "A diesel car is an economical and efficient choice for those who drive a lot. The diesel engine produces more power with less fuel, making it an excellent workhorse for towing, for example, a caravan. When long distances can be covered on a single tank, you don't need to stop at the gas station very often."
       );
   });
 
