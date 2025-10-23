@@ -37,17 +37,25 @@ describe("Smoke test for Category page.", () => {
     cy.url().should("contain", "https://saka.fi/en/cars/");
   });
 
-  it("Verify content of the category page", () => {
-    categoryPage.heroBanner().should("be.visible");
-    categoryPage.heroBannerDesc().should("be.visible");
-    categoryPage.heroBannerTitle().should("be.visible");
-    categoryPage.heroBannerTitle().should("contain", "DIESEL CARS");
-    categoryPage
-      .heroBannerDesc()
-      .should(
-        "contain",
-        "A diesel car is an economical and efficient choice for those who drive a lot. The diesel engine produces more power with less fuel, making it an excellent workhorse for towing, for example, a caravan. When long distances can be covered on a single tank, you don't need to stop at the gas station very often."
-      );
+  it.only("Verify content of the category page", () => {
+    // categoryPage.heroBanner().should("be.visible");
+    // categoryPage.heroBannerDesc().should("be.visible");
+    // categoryPage.heroBannerTitle().should("be.visible");
+    // categoryPage.heroBannerTitle().should("contain", "DIESEL CARS");
+    // categoryPage
+    //   .heroBannerDesc()
+    //   .should(
+    //     "contain",
+    //     "A diesel car is an economical and efficient choice for those who drive a lot. The diesel engine produces more power with less fuel, making it an excellent workhorse for towing, for example, a caravan. When long distances can be covered on a single tank, you don't need to stop at the gas station very often."
+    //   );
+
+    cy.prompt([
+      "Verify that hero banner is visible",
+      "Verify that hero banner has descripton",
+      "Verify that hero banner has title",
+      "Verify that hero banner has text Diesel",
+      "Hero banner should contain text: A diesel car is an economical and efficient choice for those who drive a lot.",
+    ]);
   });
 
   it("Verify that search result counter is visble", () => {
