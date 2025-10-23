@@ -20,7 +20,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npx cypress run --record --key b8267b2e-aa98-414a-b495-c92800d8312b
+        run: npx ci
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
