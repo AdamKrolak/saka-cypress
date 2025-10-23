@@ -37,7 +37,7 @@ describe("Smoke test for Category page.", () => {
     cy.url().should("contain", "https://saka.fi/en/cars/");
   });
 
-  it.only("Verify content of the category page", () => {
+  it("Verify content of the category page", () => {
     // categoryPage.heroBanner().should("be.visible");
     // categoryPage.heroBannerDesc().should("be.visible");
     // categoryPage.heroBannerTitle().should("be.visible");
