@@ -5,7 +5,9 @@ module.exports = defineConfig({
   viewportHeight: 720,
   experimetalStudio: true,
   retries: 2,
+  projectId: "extu3j",
   e2e: {
+    experimentalPromptCommand: true,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
