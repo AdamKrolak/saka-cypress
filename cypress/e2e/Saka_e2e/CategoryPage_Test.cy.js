@@ -66,7 +66,7 @@ describe("Smoke test for Category page.", () => {
     categoryPage.filters().should("be.visible");
   });
 
-  it.only("Verify sorting options", () => {
+  it("Verify sorting options are available", () => {
     categoryPage
       .sorting()
       .should("be.visible")
@@ -74,6 +74,16 @@ describe("Smoke test for Category page.", () => {
     categoryPage.sorting().click({ force: true });
     categoryPage.sorting().should("have.attr", "aria-expanded", "true");
     categoryPage.sortingList().should("be.visible");
+  });
+
+  it.only("Verify sorting of the cars works as expected, sort by most expensive", () => {
+    categoryPage.sorting().click({ force: true });
+    categoryPage.sortingList().should("be.visible");
+    categoryPage
+      .sortingList()
+      .contains("Most expensive")
+      .click({ force: true });
+    categoryPage.sorting().should("contain", "Most expensive");
   });
 
   it("Verify pagination of the search result page", () => {
