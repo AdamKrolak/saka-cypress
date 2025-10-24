@@ -30,7 +30,12 @@ export class CategoryPage {
   }
 
   sorting() {
-    return cy.get(":nth-child(1) > .flex-row > .flex");
+    //return cy.get(":nth-child(1) > .flex-row > .flex").contains("Sort By")
+    return cy.get("button[title='Sort By']");
+  }
+
+  sortingList() {
+    return cy.get("div[role='listbox']");
   }
 
   filters() {

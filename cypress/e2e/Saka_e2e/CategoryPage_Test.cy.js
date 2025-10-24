@@ -66,9 +66,14 @@ describe("Smoke test for Category page.", () => {
     categoryPage.filters().should("be.visible");
   });
 
-  it("Verify sorting options", () => {
-    categoryPage.sorting().should("be.visible");
+  it.only("Verify sorting options", () => {
+    categoryPage
+      .sorting()
+      .should("be.visible")
+      .and("have.attr", "aria-expanded", "false");
     categoryPage.sorting().click({ force: true });
+    categoryPage.sorting().should("have.attr", "aria-expanded", "true");
+    categoryPage.sortingList().should("be.visible");
   });
 
   it("Verify pagination of the search result page", () => {
