@@ -1,10 +1,10 @@
 /// <reference types="cypress"/>
 
 import { HomePage } from "./page_objects/homePage";
+
 import { LoginPage } from "./page_objects/loginPage";
 import { MyAccount } from "./page_objects/myAccount";
 import { NavigationMenu } from "./page_objects/navigationMenu";
-
 var homePage = new HomePage();
 var navigationMenu = new NavigationMenu();
 var loginPage = new LoginPage();
@@ -143,4 +143,13 @@ describe("Smoke test for My Saka Page.", () => {
     cy.wait(2000);
     cy.url().should("be.equal", "https://saka.fi/fi/auth/kirjaudu");
   });
+});
+
+it('TestAI', function() {
+  cy.get('a[href="/fi/oma-saka/autoni"] svg.lucide').click();
+  cy.get('div:nth-child(2) div.min-h-\\[1em\\]').click();
+  cy.get('a[href="/fi/oma-saka/suosikkiautoni"]').click();
+  cy.get('div.flex-wrap.gap-4 > div:nth-child(1) > div.h-full').click();
+  cy.get('a[href="/fi/oma-saka/profiilini"]').click();
+  cy.get('a[href="/fi/oma-saka/tarjoukset"]').click();
 });

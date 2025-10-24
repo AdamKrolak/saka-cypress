@@ -26,7 +26,7 @@ beforeEach(() => {
 });
 
 describe("Smoke test for Login Page.", () => {
-  it.only("The user can login to My Account using email", () => {
+  it("The user can login to My Account using email", () => {
     loginPage.verifyLoginpageUrl();
     loginPage.emailField().type("adam.krolak+2@vaimo.com", { force: true });
     loginPage.passwordField().type("zaq12WSX", { force: true });

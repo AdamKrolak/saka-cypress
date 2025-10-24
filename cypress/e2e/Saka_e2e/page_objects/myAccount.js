@@ -40,7 +40,10 @@ export class MyAccount {
   }
 
   yourOffers() {
-    return cy.get(":nth-child(1) > .my-4 > .mb-0");
+    //return cy.get(":nth-child(1) > .my-4 > .mb-0");
+    return cy.get(
+      'a[class="border-primary-400 items-between flex w-full justify-between p-6 hover:text-primary-500 focus-visible:text-primary-500 text-white dark:text-black"]'
+    );
   }
 
   yourFavCars() {
@@ -115,7 +118,8 @@ export class MyAccount {
   }
 
   recommendedCarsTitle() {
-    return cy.get(".py-4 > .flex.items-center > .text-lg");
+    //return cy.get(".py-4 > .flex.items-center > .text-lg");
+    return cy.get('h2[class="my-8 text-lg font-bold"]');
   }
 
   addCarForm() {

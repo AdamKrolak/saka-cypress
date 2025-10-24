@@ -82,7 +82,7 @@ export class HomePage {
   }
 
   serviceSupport() {
-    return cy.get(".text-h3");
+    return cy.get(".text-h2");
   }
 
   serviceSupportArt() {

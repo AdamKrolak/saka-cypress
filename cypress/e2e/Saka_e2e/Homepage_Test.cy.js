@@ -131,7 +131,7 @@ describe("Smoke test for Homepage.", () => {
   });
 
   it("Verify that services support section is displayed", () => {
-    cy.scrollTo(0, 3000);
+    cy.scrollTo(0, 3900);
     homePage
       .serviceSupport()
       .should("be.visible")
