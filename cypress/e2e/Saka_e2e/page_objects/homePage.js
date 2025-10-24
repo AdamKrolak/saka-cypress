@@ -90,9 +90,11 @@ export class HomePage {
   }
 
   articleSection() {
-    return cy.get(
-      ':nth-child(6) > .grid-cols > [role="region"] > .flex.justify-between'
-    );
+    // return cy.get(
+    //   ':nth-child(6) > .grid-cols > [role="region"] > .flex.justify-between'
+    // );
+
+    return cy.get('div[aria-label="Our articles for you"]');
   }
 
   article1() {

@@ -112,7 +112,7 @@ describe("Smoke test for Homepage.", () => {
     cy.url().should("contain", "https://saka.fi/en/cars/");
   });
 
-  it("Verify that Falimy cars sections is displayed and user can navigate from Homepage to PDP - Family Cars", () => {
+  it("Verify that Family cars sections is displayed and user can navigate from Homepage to PDP - Family Cars", () => {
     cy.scrollTo(0, 1500);
     //homePage.famillyCarTitle().should("be.visible");
     homePage.homePageMid().contains("Family cars").should("be.visible");
@@ -140,7 +140,10 @@ describe("Smoke test for Homepage.", () => {
   });
 
   it("Verify that articles section is displayed", () => {
-    cy.scrollTo(0, 3000);
+    cy.scrollTo(0, 4000);
+    cy.wait(1000);
+    cy.get('p[class="sr-only"]').contains("Close").click({ force: true });
+    cy.wait(1000);
     homePage
       .articleSection()
       .scrollIntoView()

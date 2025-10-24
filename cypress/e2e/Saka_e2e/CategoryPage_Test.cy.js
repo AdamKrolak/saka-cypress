@@ -76,7 +76,7 @@ describe("Smoke test for Category page.", () => {
     categoryPage.sortingList().should("be.visible");
   });
 
-  it.only("Verify sorting of the cars works as expected, sort by most expensive", () => {
+  it("Verify sorting of the cars works as expected, sort by most expensive", () => {
     categoryPage.sorting().click({ force: true });
     categoryPage.sortingList().should("be.visible");
     categoryPage
