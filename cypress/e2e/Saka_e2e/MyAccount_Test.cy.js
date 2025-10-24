@@ -144,12 +144,3 @@ describe("Smoke test for My Saka Page.", () => {
     cy.url().should("be.equal", "https://saka.fi/fi/auth/kirjaudu");
   });
 });
-
-it('TestAI', function() {
-  cy.get('a[href="/fi/oma-saka/autoni"] svg.lucide').click();
-  cy.get('div:nth-child(2) div.min-h-\\[1em\\]').click();
-  cy.get('a[href="/fi/oma-saka/suosikkiautoni"]').click();
-  cy.get('div.flex-wrap.gap-4 > div:nth-child(1) > div.h-full').click();
-  cy.get('a[href="/fi/oma-saka/profiilini"]').click();
-  cy.get('a[href="/fi/oma-saka/tarjoukset"]').click();
-});
