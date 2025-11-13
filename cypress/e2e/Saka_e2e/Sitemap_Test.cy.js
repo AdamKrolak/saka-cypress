@@ -107,7 +107,7 @@ describe("Sitemap Validation", () => {
         .should("have.attr", "content")
         .and(
           "include",
-          "Find your perfect car from Saka's selection of over 4,150 trade-in cars with convenient search. We will deliver the car to your home free of charge."
+          "Find your perfect car from Saka's selection of over 3,500 trade-in cars with convenient search. We will deliver the car to your home free of charge."
         );
 
       siteMap

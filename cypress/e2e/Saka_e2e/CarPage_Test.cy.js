@@ -9,11 +9,17 @@ var homePage = new HomePage();
 var carPage = new CarPage();
 var categoryPage = new CategoryPage();
 
+// Helper to open a car using a categoryPage getter function
+function openCar(carGetter) {
+  // receive a function like: () => categoryPage.car6()
+  carGetter().scrollIntoView().click({ force: true });
+  cy.wait(500);
+}
+
 beforeEach(() => {
   cy.acceptCookiesBySetting();
   cy.visit("hybrid-cars");
   cy.wait(1000);
-  //homePage.acceptAllCookies();
   Cypress.on("uncaught:exception", (err) => {
     if (
       err.message.includes("fbq is not defined") ||
@@ -27,7 +33,7 @@ beforeEach(() => {
 describe("Smoke test for Car page.", () => {
   it("Verify that user can navigate from category page to the car page ", () => {
     cy.url().should("be.equal", "https://saka.fi/en/hybrid-cars");
-    categoryPage.car6().click({ force: true });
+    openCar(() => categoryPage.car6());
     cy.url().should("contain", "https://saka.fi/en/cars/");
   });
 
@@ -40,107 +46,73 @@ describe("Smoke test for Car page.", () => {
       .should("be.visible")
       .find(".m-0")
       .click({ force: true });
-    // cy.get('[style="transform: translate3d(0px, 0px, 0px);"]')
-    //   .find(".aspect-\\[1076\\/694\\]")
-    //   .should("be.visible");
     carPage.carImage().should("be.visible");
     carPage.firstGallImage().should("exist");
   });
 
   it("Verify that name of the car is visible", () => {
-    categoryPage.car1().click({ force: true });
+    openCar(() => categoryPage.car1());
     carPage.carName().should("exist");
   });
 
   it("Verify that short description of the car is visible", () => {
-    categoryPage.car1().click({ force: true });
+    openCar(() => categoryPage.car1());
     carPage.carShorDsc().should("be.visible");
   });
 
   it("Verify that car price is visible", () => {
-    categoryPage.car1().click({ force: true });
+    openCar(() => categoryPage.car1());
     carPage.carPrice().should("be.visible");
   });
 
   it("Verify that breadcrumbs are displayed ", () => {
-    categoryPage.car1().click({ force: true });
+    openCar(() => categoryPage.car1());
     carPage.breadcrumbs().should("be.visible");
   });
 
   it("Verify that financing calculator is visible ", () => {
-    categoryPage.car1().click({ force: true });
-    cy.wait(1000);
-    carPage.financingBtn().should("be.visible");
-    carPage.financingBtn().click({ force: true });
-    //carPage.financingCalc().should("be.visible");
+    openCar(() => categoryPage.car1());
+    carPage.financingBtn().should("be.visible").click({ force: true });
   });
 
-  // it("Verify that basic info of the car are available", () => {
-  //   categoryPage.car1().click({ force: true });
-  //   carPage.mileage().should("be.visible");
-  //   carPage.yearOfManNew().should("be.visible");
-  //   carPage.type().should("be.visible");
-  //   carPage.transmission().should("be.visible");
-  // });
-
   it("Verify that user can view image in full screen", () => {
-    categoryPage.car6().click({ force: true });
+    openCar(() => categoryPage.car6());
     carPage.fullScreenBtn().click({ force: true });
     carPage.fullImage().should("be.visible");
   });
 
   it("Verify that user can minimise image", () => {
-    categoryPage.car6().click({ force: true });
+    openCar(() => categoryPage.car6());
     carPage.fullScreenBtn().click({ force: true });
     carPage.minimiseBtn().click({ force: true });
     carPage.minimiseBtn().should("not.exist");
   });
 
-  // it("Verify use can expand equpiment accordion and the content is visible ", () => {
-  //   categoryPage.car4().click({ force: true });
-  //   cy.wait(500);
-  //   cy.scrollTo(0, 500);
-  //   //carPage.equAcc().should("be.visible");
-  //   carPage.equipement().click({ force: true });
-  //   //carPage.equAccTitle().should("be.visible");
-  //   carPage.equipementCont().should("be.visible");
-  // });
-
   it("Verify use can expand basic information accordion and the content is visible ", () => {
-    categoryPage.car6().scrollIntoView().click({ force: true });
-    // cy.get('div[data-id="car-details-desktop"]')
-    //   .find("button")
-    //   .contains("Basic Information");
-
-    carPage.basicInfoAcc().should("be.visible");
-    carPage.basicInfoAcc().click({ force: true });
+    openCar(() => categoryPage.car6());
+    carPage.basicInfoAcc().should("be.visible").click({ force: true });
     carPage.basicInfoTitle().should("be.visible");
     carPage.basicInfoAccCont().should("be.visible");
   });
 
   it("Verify use can expand technical information accordion and the content is visible ", () => {
-    categoryPage.car6().click({ force: true });
-    cy.wait(500);
+    openCar(() => categoryPage.car6());
     cy.scrollTo(0, 500);
-    //carPage.techInfoAcc().should("be.visible");
     carPage.techInfoTitle().should("be.visible");
     carPage.techInfoAcc().click({ force: true });
     carPage.techInfoAcc().should("be.visible");
   });
 
   it("Verify use can expand condition report accordion and the condition form is available ", () => {
-    categoryPage.car4().click({ force: true });
-    cy.wait(500);
+    openCar(() => categoryPage.car4());
     cy.scrollTo(0, 500);
     carPage.condRepotTitle().should("be.visible");
-    //carPage.condRepotAcc().should("be.visible");
     carPage.condRepotAcc().click({ force: true });
     carPage.condRepotAccForm().should("be.visible");
   });
 
   it("Verify that Related vehicels section is displayed", () => {
-    categoryPage.car6().click({ force: true });
-    cy.wait(500);
+    openCar(() => categoryPage.car6());
     cy.scrollTo("bottom");
     carPage.relatedCarTitle().should("be.visible");
     carPage.relatedCarSection().should("be.visible");
@@ -148,21 +120,19 @@ describe("Smoke test for Car page.", () => {
   });
 
   it("Verify that user can navigate to related car page", () => {
-    categoryPage.car6().click({ force: true });
-    cy.wait(500);
+    openCar(() => categoryPage.car6());
     cy.scrollTo("bottom");
     cy.wait(2500);
     carPage.relatedCarFirstCar().click({ force: true });
   });
 
   it("Verify that SakaVarma is visible", () => {
-    categoryPage.car6().click({ force: true });
+    openCar(() => categoryPage.car6());
     carPage.sakaVarma().should("be.visible");
   });
 
   it("Verify that Sales People section is visible", () => {
-    categoryPage.car6().click({ force: true });
-    cy.wait(500);
+    openCar(() => categoryPage.car6());
     cy.scrollTo("bottom");
     cy.wait(1500);
     cy.scrollTo("center");
