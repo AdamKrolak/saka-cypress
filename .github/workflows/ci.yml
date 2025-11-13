@@ -26,8 +26,8 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          headed: true
-          record: true
+          headed: false
+          record: false
 
       - uses: actions/upload-artifact@v4
         with:
